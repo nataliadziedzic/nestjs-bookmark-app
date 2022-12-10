@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Req, UseGuards } from '@nestjs/common';
+import { Controller, Get, Param, UseGuards } from '@nestjs/common';
 import { ParseIntPipe } from '@nestjs/common/pipes';
 import { User } from '@prisma/client';
 import { GetUser } from 'src/auth/decorator';
