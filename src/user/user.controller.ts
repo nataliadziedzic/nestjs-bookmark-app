@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Req, UseGuards } from '@nestjs/common';
 import { ParseIntPipe } from '@nestjs/common/pipes';
-import { AuthGuard } from '@nestjs/passport';
-import { Request } from 'express';
+import { User } from '@prisma/client';
+import { GetUser } from 'src/auth/decorator';
 import { JwtGuard } from 'src/auth/guard';
 import { UserService } from './user.service';
 
@@ -11,8 +11,8 @@ export class UserController {
 
   @UseGuards(JwtGuard)
   @Get('myAccount')
-  getLoggedInUser(@Req() req: Request) {
-    return req.user;
+  getLoggedInUser(@GetUser() user: User) {
+    return user;
   }
 
   @UseGuards(JwtGuard)
