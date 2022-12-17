@@ -3,8 +3,8 @@ import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
 import { JwtService } from '@nestjs/jwt/dist';
 import * as argon from 'argon2';
 
-import { PrismaService } from 'src/prisma/prisma.service';
-import { AuthDto } from 'src/dto';
+import { PrismaService } from '../prisma/prisma.service';
+import { AuthDto } from '../dto';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()
